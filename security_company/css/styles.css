@@ -1120,6 +1120,106 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+
+    /* ── Mobile Navigation Fix ── */
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--color-darker, #1a2b47);
+        padding: 80px 30px 30px;
+        z-index: 10000;
+        transition: right 0.3s ease;
+        overflow-y: auto;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+    }
+
+    .nav-menu.open,
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-menu > li:last-child {
+        margin-left: 0;
+        border-bottom: none;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 14px 0;
+        font-size: 1rem;
+        color: #ffffff;
+    }
+
+    /* Mobile dropdown */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: rgba(255,255,255,0.05);
+        padding: 0 0 0 15px;
+        width: 100%;
+        display: none;
+        border-radius: 0;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown.open > a .fa-chevron-down {
+        transform: rotate(180deg);
+    }
+
+    .dropdown > a .fa-chevron-down {
+        transition: transform 0.3s ease;
+        display: inline-block;
+    }
+
+    .dropdown-menu li a {
+        color: rgba(255,255,255,0.75);
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
+
+    /* Overlay behind menu */
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 9999;
+    }
+
+    .nav-overlay.open {
+        display: block;
+    }
+
+    /* Hide navbar actions on mobile — show in menu instead */
+    .navbar-actions {
+        display: none;
+    }
+
     h1 {
         font-size: 2.5rem;
     }

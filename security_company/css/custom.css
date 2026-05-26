@@ -256,8 +256,8 @@
 
 .home-pro .hero.hero-inspire {
     width: 100%;
-    height: clamp(480px, 76vh, 780px);
-    min-height: 0;
+    height: 100vh;
+    min-height: 560px;
     margin: 0;
     padding: 0;
     position: relative;
@@ -398,8 +398,8 @@
 /* About intro — white two-column */
 .home-pro .about.about-intro {
     background: #ffffff;
-    padding: clamp(48px, 6vw, 72px) 0 clamp(40px, 5vw, 56px);
-    margin-top: -1px;
+    padding: clamp(72px, 8vw, 100px) 0 clamp(60px, 6vw, 80px);
+    margin-top: 0;
 }
 
 .home-pro .about.about-intro .about-content {
@@ -1781,4 +1781,17 @@ footer .footer-column h4 {
 footer .social-links a:hover {
     color: var(--color-accent);
     border-color: var(--color-accent);
+}
+
+/* ── Mobile Nav Overlay ── */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+.nav-overlay.open {
+    display: block;
+    cursor: pointer;
 }
